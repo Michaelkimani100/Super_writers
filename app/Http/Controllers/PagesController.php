@@ -19,4 +19,5 @@ class PagesController extends Controller
     {
         return view('writer/reg');
     }
+   
 }

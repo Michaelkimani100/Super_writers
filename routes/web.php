@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/verify/{token}', 'VerifyController@verify')->name('verify');
+Route::post('store','UploadsController@store');

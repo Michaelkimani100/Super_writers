@@ -11,7 +11,6 @@
                    
                     @endif                   
                 </div>
-                
             </div>
 
         </div>
