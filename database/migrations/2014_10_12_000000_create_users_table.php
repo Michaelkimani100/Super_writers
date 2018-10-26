@@ -27,7 +27,8 @@ class CreateUsersTable extends Migration
             $table->mediumText('about_me');
             $table->mediumText('areas');
             $table->string('citation');
-            $table->string('gender');           
+            $table->string('gender');     
+            $table->boolean('admin')->default(0);      
             $table->string('token')->nullable();
             $table->rememberToken();
             $table->timestamps();

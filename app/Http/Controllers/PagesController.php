@@ -11,13 +11,4 @@ class PagesController extends Controller
     {
         return view('index');
     }
-    public function getdashboardHome()
-    {
-        return view('/writer/index');
-    }
-    public function getReg()
-    {
-        return view('writer/reg');
-    }
-   
 }

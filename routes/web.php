@@ -16,6 +16,16 @@ Route::get('/writer/reg', 'PagesController@getReg');
 
 Route::post('/contact/submit','MessagesController@submit');
 Auth::routes();
+Route::post('/login/custom',[
+    'uses'=>'LoginController@login',
+    'as'=>'login.custom'
+
+]);
+Route::group(['middleware'=>'auth'],function()
+{
+    Route::get('/writer/index','WriterController@home')->name('writer');
+    Route::get('/Admin/index','AdminController@home')->name('admin');
+});
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/verify/{token}', 'VerifyController@verify')->name('verify');

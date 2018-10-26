@@ -14,7 +14,7 @@
                     <div class="shape6"></div>
                     <div class="shape7"></div>
                     <div class="float">
-                        <form class="form" action="{{route('login')}}" method="POST">
+                        <form class="form" action="{{route('login.custom')}}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="email" class="text-white">Email:</label><br>

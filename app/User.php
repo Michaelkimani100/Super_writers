@@ -34,4 +34,12 @@ class User extends Authenticatable
     {
         $this->notify(new VerifyEmail($this));
     }
+    public function is_admin()
+    {
+        if($this->admin)
+        {
+            return true;
+        }
+        return false;
+    }
 }

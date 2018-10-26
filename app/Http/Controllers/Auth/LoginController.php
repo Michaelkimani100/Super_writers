@@ -25,9 +25,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    session()->flash('message','Welcome to super writers');
-    protected $redirectTo = '/writer/reg';
-
+    protected $redirectTo='/writer/reg';
+        
     /**
      * Create a new controller instance.
      *

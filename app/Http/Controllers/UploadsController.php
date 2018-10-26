@@ -8,7 +8,11 @@ class UploadsController extends Controller
 {
     public function store(request $request)
     {
+        $request->session()->flash('message','Your file was received');
         $request->file('trial');
-        return $request->trial->store('public');
+      
+       $request->trial->store('public');
+        return session('message');
+        
     }
 }
