@@ -16,6 +16,11 @@
                     <div class="float">
                         <form class="form" action="{{route('login.custom')}}" method="POST">
                             @csrf
+                            @if(session()->has('login_error'))
+                            <div class="alert alert-danger">
+                            {{session()->get('login_error')}}
+                            </div>
+                            @endif
                             <div class="form-group">
                                 <label for="email" class="text-white">Email:</label><br>
                                 <input type="email" name="email" id="email"class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" required autofocus>

@@ -6,15 +6,14 @@
 @import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+//@import '~bootstrap/scss/bootstrap';
 //custom
 @import "custom";
 //dashboard
 @import "dashboard";
 //dashborad
 @import "dashboard";
-//dashborad
-@import "dashboardfont";
 //Reg
 @import "reg";
 

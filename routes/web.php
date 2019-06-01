@@ -11,9 +11,6 @@
 |
 */
 Route::get('/', 'PagesController@getHome');
-Route::get('/writer/index', 'PagesController@getdashboardHome');
-Route::get('/writer/reg', 'PagesController@getReg');
-
 Route::post('/contact/submit','MessagesController@submit');
 Auth::routes();
 Route::post('/login/custom',[
@@ -21,11 +18,18 @@ Route::post('/login/custom',[
     'as'=>'login.custom'
 
 ]);
+
 Route::group(['middleware'=>'auth'],function()
 {
-    Route::get('/writer/index','WriterController@home')->name('writer');
-    Route::get('/Admin/index','AdminController@home')->name('admin');
+    Route::get('/writer/index','WriterController@index')->name('writer');
+    Route::get('/admin/index','AdminController@home')->name('admin');
 });
+Route::get('logout', 'AdminController@logout');
+Route::get('/admin/profile','AdminController@profile');
+Route::resource('users','UsersController');
+Route::resource('orders','OrdersController');
+Route::resource('writer','WritersController');
+Route::get('/admin/approvedusers','AdminController@approvedusers');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/verify/{token}', 'VerifyController@verify')->name('verify');

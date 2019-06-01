@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use\App\Notifications\VerifyEmail;
+use App\Order;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -42,4 +43,20 @@ class User extends Authenticatable
         }
         return false;
     }
+    public function is_approved()
+    {
+        if($this->approved)
+        {
+            return true;
+        }
+        return false;
+    }
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
+    public function getId()
+        {
+        return $this->id;
+        }
 }
